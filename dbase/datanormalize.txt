@@ -1,0 +1,89 @@
+//// -- LEVEL 1
+//// -- Tables and References
+
+// Main tables
+Table users {
+  userId increment [pk] // auto-increment
+  userNickName varchar
+  userName varchar
+  userSurname varchar
+  userAdressStreet varchar
+  userAdressNumber int
+  userAdressApartment varchar
+  userAdressCity varchar
+  userAdressZipCode int [ref: > zipCode.zipCodeId]
+  userAdressCountry int [ref: > country.countryId]
+  userTaxCond int [ref: > taxCond.taxCondId]
+}
+Table products {
+  productId increment [pk] // auto-increment
+  productName varchar
+  productDescription varchar
+  productSize varchar
+  productWeight varchar
+  productStock int
+  productPrice int
+  productSeller int  [ref: > seller.sellerId]
+}
+Table seller {
+  sellerId increment [pk]
+  userNickName varchar
+  userName varchar
+  userSurname varchar
+  userAdressStreet varchar
+  userAdressNumber int
+  userAdressApartment varchar
+  userAdressCity varchar
+  userAdressZipCode int [ref: > zipCode.zipCodeId]
+  userAdressCountry int [ref: > country.countryId]
+  userTaxCond int [ref: > taxCond.taxCondId]
+}
+
+//// -- LEVEL 2
+// Secondary tables
+Table order {
+  orderId increment [pk]
+  orderDate date
+  orderUser int  [ref: > users.userId]
+  orderState int  [ref: > states.stateId]
+  orderPayment int  [ref: > payment.paymentId]
+  orderDelivery int  [ref: > delivery.deliveryId]
+}
+Table Items {
+  itemId increment[pk]
+  itemOrder int  [ref: > order.orderId]
+  itemProduct int  [ref: > products.productId]
+  itemQuantity int
+}
+Table images {
+  imageId increment [pk]
+  imageProductId  int [ref: > products.productId]
+  image varchar // ruta de la imagen
+}
+Table states {
+  stateId increment[pk]
+  stateType varchar
+}
+
+//// -- LEVEL 3
+// Support tables
+Table country {
+  countryId int [pk]
+  countryName varchar
+}
+Table zipCode {
+  zipCodeId int [pk]
+  zipCodeLocation varchar
+}
+Table taxCond {
+  taxCondId int [pk]
+  taxCondName varchar
+}
+Table payment {
+  paymentId increment[pk]
+  paymentType varchar
+}
+Table delivery {
+  deliveryId increment [pk]
+  deeliveryType varchar
+}
