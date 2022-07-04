@@ -1,9 +1,11 @@
+//// origen
+// https://dbdiagram.io/d/62c21abf69be0b672c8edad4
 //// -- LEVEL 1
 //// -- Tables and References
 
 // Main tables
 Table users {
-  userId increment [pk] // auto-increment
+  userId serial [pk] // auto-serial
   userNickName varchar
   userName varchar
   userSurname varchar
@@ -16,17 +18,17 @@ Table users {
   userTaxCond int [ref: > taxCond.taxCondId]
 }
 Table products {
-  productId increment [pk] // auto-increment
+  productId serial [pk] // auto-serial
   productName varchar
   productDescription varchar
   productSize varchar
   productWeight varchar
   productStock int
   productPrice int
-  productSeller int  [ref: > seller.sellerId]
+  productSeller int  [ref: > sellers.sellerId]
 }
-Table seller {
-  sellerId increment [pk]
+Table sellers {
+  sellerId serial [pk]
   userNickName varchar
   userName varchar
   userSurname varchar
@@ -41,8 +43,8 @@ Table seller {
 
 //// -- LEVEL 2
 // Secondary tables
-Table order {
-  orderId increment [pk]
+Table orders {
+  orderId serial [pk]
   orderDate date
   orderUser int  [ref: > users.userId]
   orderState int  [ref: > states.stateId]
@@ -50,18 +52,18 @@ Table order {
   orderDelivery int  [ref: > delivery.deliveryId]
 }
 Table Items {
-  itemId increment[pk]
-  itemOrder int  [ref: > order.orderId]
+  itemId serial[pk]
+  itemOrder int  [ref: > orders.orderId]
   itemProduct int  [ref: > products.productId]
   itemQuantity int
 }
 Table images {
-  imageId increment [pk]
+  imageId serial [pk]
   imageProductId  int [ref: > products.productId]
   image varchar // ruta de la imagen
 }
 Table states {
-  stateId increment[pk]
+  stateId serial[pk]
   stateType varchar
 }
 
@@ -76,14 +78,14 @@ Table zipCode {
   zipCodeLocation varchar
 }
 Table taxCond {
-  taxCondId int [pk]
+  taxCondId serial [pk]
   taxCondName varchar
 }
 Table payment {
-  paymentId increment[pk]
+  paymentId serial[pk]
   paymentType varchar
 }
 Table delivery {
-  deliveryId increment [pk]
+  deliveryId serial [pk]
   deeliveryType varchar
 }
