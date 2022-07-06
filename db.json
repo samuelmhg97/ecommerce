@@ -1,0 +1,125 @@
+{
+    "productos": [
+        {
+            "id": 1,
+            "name": "Iphone 12",
+            "Marca": "Iphone",
+            "Categoria": "Celulares",
+            "Condicion": "Nuevo",
+            "Precio": 25000,
+            "Ubicación": "Cordoba",
+            "Imagen": "https://www.apple.com/v/iphone-12/i/images/specs/finish_iphone12__ctf4hoqpbnki_large.jpg"
+            
+        },
+        {
+            "id": 2,
+            "name": "HyperX Alloy Origins",
+            "Marca": "HyperX",
+            "Categoria": "Teclados Mecanicos",
+            "Condicion": "Nuevo",
+            "Precio": 18000,
+            "Ubicación": "Buenos Aires",
+            "Imagen": "https://cdn.shopify.com/s/files/1/0564/3612/9997/p…alloy_origins_us_1_top_down_300x.jpg?v=1655754802"
+            
+        },
+        {
+            "id": 3,
+            "name": "HyperX Cloud Alpha",
+            "Marca": "HyperX",
+            "Categoria": "Auriculares",
+            "Condicion": "Nuevo",
+            "Precio": 20000,
+            "Ubicación": "Jujuy",
+            "Imagen": "https://cdn.shopify.com/s/files/1/0564/3612/9997/p…cloud_alpha_blackred_1_main_300x.jpg?v=1655969550"
+            
+        },
+        {
+            "id": 4,
+            "name": "Galaxy 5",
+            "Marca": "Adidas",
+            "Categoria": "Zapatillas",
+            "Condicion": "Usadas",
+            "Precio": 7500,
+            "Ubicación": "Misiones",
+            "Imagen": "https://assets.adidas.com/images/h_840,f_auto,q_au…Zapatillas_Galaxy_5_Blanco_GW0763_01_standard.jpg"
+            
+        },
+        {
+            "id": 5,
+            "name": "Samsung Galaxy A32",
+            "Marca": "Samsung",
+            "Categoria": "Celulares",
+            "Condicion": "Usado",
+            "Precio": 30000,
+            "Ubicación": "Tierra del Fuego",
+            "Imagen": "https://images.samsung.com/is/image/samsung/p6pim/…y-a32-a325-sm-a325mzkmaro-399841305?$365_292_PNG$"
+            
+        },
+        {
+            "id": 6,
+            "name": "Sillas Atril",
+            "Marca": "S/N",
+            "Categoria": "Hogar",
+            "Condicion": "Nuevo",
+            "Precio": 15000,
+            "Ubicación": "Cordoba",
+            "Imagen": "https://www.apple.com/v/iphone-12/i/images/specs/finish_iphone12__ctf4hoqpbnki_large.jpg"
+            
+        },
+        {
+            "id": 7,
+            "name": "Mesa de Hierro y Madera",
+            "Marca": "S/N",
+            "Categoria": "Hogar",
+            "Condicion": "Nuevo",
+            "Precio": 35000,
+            "Ubicación": "San Luis",
+            "Imagen": "https://http2.mlstatic.com/D_NQ_NP_676894-MLA49349196978_032022-O.webp"
+            
+        },
+        {
+            "id": 8,
+            "name": "Atornillador Taladro Bosch",
+            "Marca": "Bosch",
+            "Categoria": "Herramientas",
+            "Condicion": "Nuevo",
+            "Precio": 15000,
+            "Ubicación": "Formosa",
+            "Imagen": "https://http2.mlstatic.com/D_NQ_NP_875249-MLA48811182839_012022-O.webp"
+            
+        }, 
+        {
+            "id": 9,
+            "name": "Amigos de Mierda 2",
+            "Marca": "Buró",
+            "Categoria": "Juegos",
+            "Condicion": "Nuevo",
+            "Precio": 1999,
+            "Ubicación": "Cordoba",
+            "Imagen": "https://http2.mlstatic.com/D_NQ_NP_659070-MLA46557060129_062021-O.webp"
+            
+        },
+        {
+            "id": 10,
+            "name": "Con eso no se jode",
+            "Marca": "Buro",
+            "Categoria": "Juegos",
+            "Condicion": "Usado",
+            "Precio": 1200,
+            "Ubicación": "Cordoba",
+            "Imagen": "https://http2.mlstatic.com/D_NQ_NP_877394-MLA44736012526_012021-O.webp"
+            
+        }, 
+        {
+            "id": 11,
+            "name": "Preservativos Prime x3",
+            "Marca": "Prime",
+            "Categoria": "Salud e Higiene",
+            "Condicion": "Usado",
+            "Precio": 350,
+            "Ubicación": "Cordoba",
+            "Imagen": "https://http2.mlstatic.com/D_NQ_NP_756198-MLA45853141063_052021-O.webp"
+            
+        }
+    ]
+}
