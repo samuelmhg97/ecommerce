@@ -8,7 +8,9 @@ Table users {
   userId serial [pk] // auto-serial
   userNickName varchar
   userName varchar
-  userSurname varchar
+  userSurname varchar  
+  userPhoneNumb int
+  userEmail varchar
   userAdressStreet varchar
   userAdressNumber int
   userAdressApartment varchar
@@ -29,16 +31,18 @@ Table products {
 }
 Table sellers {
   sellerId serial [pk]
-  userNickName varchar
-  userName varchar
-  userSurname varchar
-  userAdressStreet varchar
-  userAdressNumber int
-  userAdressApartment varchar
-  userAdressCity varchar
-  userAdressZipCode int [ref: > zipCode.zipCodeId]
-  userAdressCountry int [ref: > country.countryId]
-  userTaxCond int [ref: > taxCond.taxCondId]
+  sellerNickName varchar
+  sellerName varchar
+  sellerSurname varchar  
+  sellerPhoneNumb int
+  sellerEmail varchar
+  sellerAdressStreet varchar
+  sellerAdressNumber int
+  sellerAdressApartment varchar
+  sellerAdressCity varchar
+  sellerAdressZipCode int [ref: > zipCode.zipCodeId]
+  sellerAdressCountry int [ref: > country.countryId]
+  sellerTaxCond int [ref: > taxCond.taxCondId]
 }
 
 //// -- LEVEL 2
@@ -51,7 +55,7 @@ Table orders {
   orderPayment int  [ref: > payment.paymentId]
   orderDelivery int  [ref: > delivery.deliveryId]
 }
-Table Items {
+Table items {
   itemId serial[pk]
   itemOrder int  [ref: > orders.orderId]
   itemProduct int  [ref: > products.productId]
@@ -61,6 +65,7 @@ Table images {
   imageId serial [pk]
   imageProductId  int [ref: > products.productId]
   image varchar // ruta de la imagen
+  imageOrder int // orden de muestra
 }
 Table states {
   stateId serial[pk]
@@ -87,5 +92,5 @@ Table payment {
 }
 Table delivery {
   deliveryId serial [pk]
-  deeliveryType varchar
+  deliveryType varchar
 }
