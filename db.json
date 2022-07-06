@@ -120,6 +120,17 @@
             "Ubicación": "Cordoba",
             "Imagen": "https://http2.mlstatic.com/D_NQ_NP_756198-MLA45853141063_052021-O.webp"
             
+        },
+        {
+            "id": 12,
+            "name": "Preservativos Prime x6",
+            "Marca": "Prime",
+            "Categoria": "Salud e Higiene",
+            "Condicion": "Usado",
+            "Precio": 350,
+            "Ubicación": "Cordoba",
+            "Imagen": "https://http2.mlstatic.com/D_NQ_NP_756198-MLA45853141063_052021-O.webp"
+            
         }
     ]
 }
