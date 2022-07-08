@@ -5,92 +5,92 @@
 
 // Main tables
 Table users {
-  userId serial [pk] // auto-serial
-  userNickName varchar
-  userName varchar
-  userSurname varchar  
-  userPhoneNumb int
-  userEmail varchar
-  userAdressStreet varchar
-  userAdressNumber int
-  userAdressApartment varchar
-  userAdressCity varchar
-  userAdressZipCode int [ref: > zipCode.zipCodeId]
-  userAdressCountry int [ref: > country.countryId]
-  userTaxCond int [ref: > taxCond.taxCondId]
+  Id
+  userNickName : {type: DataTypes.STRING},
+  userName : {type: DataTypes.STRING},
+  userSurname : {type: DataTypes.STRING},  
+  userPhoneNumb : {type: DataTypes.INTEGER},
+  userEmail : {type: DataTypes.STRING},
+  userAdressStreet : {type: DataTypes.STRING},
+  userAdressNumber : {type: DataTypes.INTEGER},
+  userAdressApartment : {type: DataTypes.STRING},
+  userAdressCity : {type: DataTypes.STRING},
+  userAdressZipCode : {type: DataTypes.INTEGER},//  [ref: > zipCode.zipCodeId]
+  userAdressCountry : {type: DataTypes.INTEGER},//  [ref: > country.countryId]
+  userTaxCond : {type: DataTypes.INTEGER},//  [ref: > taxCond.taxCondId]
 }
 Table products {
-  productId serial [pk] // auto-serial
-  productName varchar
-  productDescription varchar
-  productSize varchar
-  productWeight varchar
-  productStock int
-  productPrice int
-  productSeller int  [ref: > sellers.sellerId]
+  Id
+  productName : {type: DataTypes.STRING},
+  productDescription : {type: DataTypes.STRING},
+  productSize : {type: DataTypes.STRING},
+  productWeight : {type: DataTypes.STRING},
+  productStock : {type: DataTypes.INTEGER},
+  productPrice : {type: DataTypes.INTEGER},
+  productSeller : {type: DataTypes.INTEGER}, //  [ref: > sellers.sellerId]
 }
 Table sellers {
-  sellerId serial [pk]
-  sellerNickName varchar
-  sellerName varchar
-  sellerSurname varchar  
-  sellerPhoneNumb int
-  sellerEmail varchar
-  sellerAdressStreet varchar
-  sellerAdressNumber int
-  sellerAdressApartment varchar
-  sellerAdressCity varchar
-  sellerAdressZipCode int [ref: > zipCode.zipCodeId]
-  sellerAdressCountry int [ref: > country.countryId]
-  sellerTaxCond int [ref: > taxCond.taxCondId]
+  Id
+  sellerNickName : {type: DataTypes.STRING},
+  sellerName : {type: DataTypes.STRING},
+  sellerSurname : {type: DataTypes.STRING},  
+  sellerPhoneNumb : {type: DataTypes.INTEGER},
+  sellerEmail : {type: DataTypes.STRING},
+  sellerAdressStreet : {type: DataTypes.STRING},
+  sellerAdressNumber : {type: DataTypes.INTEGER},
+  sellerAdressApartment : {type: DataTypes.STRING},
+  sellerAdressCity : {type: DataTypes.STRING},
+  sellerAdressZipCode : {type: DataTypes.INTEGER},//  [ref: > zipCode.zipCodeId]
+  sellerAdressCountry : {type: DataTypes.INTEGER},//  [ref: > country.countryId]
+  sellerTaxCond : {type: DataTypes.INTEGER},//  [ref: > taxCond.taxCondId]
 }
 
 //// -- LEVEL 2
 // Secondary tables
 Table orders {
-  orderId serial [pk]
-  orderDate date
-  orderUser int  [ref: > users.userId]
-  orderState int  [ref: > states.stateId]
-  orderPayment int  [ref: > payment.paymentId]
-  orderDelivery int  [ref: > delivery.deliveryId]
+  Id
+  order: {type: DataTypes.DATE},
+  orderUser : {type: DataTypes.INTEGER}, //  [ref: > users.userId]
+  orderState : {type: DataTypes.INTEGER}, //  [ref: > states.stateId]
+  orderPayment : {type: DataTypes.INTEGER}, //  [ref: > payment.paymentId]
+  orderDelivery : {type: DataTypes.INTEGER}, //  [ref: > delivery.deliveryId]
 }
 Table items {
-  itemId serial[pk]
-  itemOrder int  [ref: > orders.orderId]
-  itemProduct int  [ref: > products.productId]
-  itemQuantity int
+  Id
+  itemOrder : {type: DataTypes.INTEGER}, //  [ref: > orders.orderId]
+  itemProduct : {type: DataTypes.INTEGER}, //  [ref: > products.productId]
+  itemQuantity : {type: DataTypes.INTEGER},
 }
 Table images {
-  imageId serial [pk]
-  imageProductId  int [ref: > products.productId]
-  image varchar // ruta de la imagen
-  imageOrder int // orden de muestra
+  Id
+  imageProductId  : {type: DataTypes.INTEGER},//  [ref: > products.productId]
+  image : {type: DataTypes.STRING}, // ruta de la imagen
+  imageOrder : {type: DataTypes.INTEGER}, // orden de muestra
 }
 Table states {
-  stateId serial[pk]
-  stateType varchar
+  Id
+  stateType : {type: DataTypes.STRING},
 }
 
 //// -- LEVEL 3
 // Support tables
 Table country {
-  countryId int [pk]
-  countryName varchar
+  Id : {type: DataTypes.INTEGER}, // [pk]
+  countryName : {type: DataTypes.STRING},
 }
 Table zipCode {
-  zipCodeId int [pk]
-  zipCodeLocation varchar
+  zipCodeId : {type: DataTypes.INTEGER}, // [pk]
+  zipCodeLocation : {type: DataTypes.STRING},
 }
 Table taxCond {
-  taxCondId serial [pk]
-  taxCondName varchar
+  Id
+  taxCondName : {type: DataTypes.STRING},
 }
-Table payment {
-  paymentId serial[pk]
-  paymentType varchar
+Table payments {
+  Id
+  paymentType : {type: DataTypes.STRING},
 }
-Table delivery {
-  deliveryId serial [pk]
-  deliveryType varchar
+Table deliveries {
+  Id
+  deliveryType : {type: DataTypes.STRING},
 }

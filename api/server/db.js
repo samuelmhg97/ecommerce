@@ -1,48 +1,24 @@
 const { Sequelize,DataTypes } = require('sequelize');
+const users = require ('./models/users');
+const sellers = require ('./models/sellers');
+const products = require ('./models/products');
+const orders = require ('./models/orders');
+const states = require ('./models/states');
+const payments = require ('./models/payments');
+const deliveries = require ('./models/deliveries');
+const countries = require ('./models/countries');
+const images = require ('./models/images');
+const zipCodes = require ('./models/zipCodes');
+const taxCond = require ('./models/taxCond');
+const items = require ('./models/items');
 
-// nueva instancia de sequelize
-//const sequelize = new Sequelize('postgres://postgres:0170@localhost:5432/Ecommerce')
-const sequelize = new Sequelize('postgres://postgres:0170@localhost:5433/prueba')
-
-//es un tabla q se va a llamar users
-
-sequelize.define('users', {
-    firstName: {
-        type: DataTypes.STRING
-    },
-    lastName: {
-        type: DataTypes.STRING
-    },
-    nickname: {
-        type: DataTypes.STRING
-    }
-}, {
-    timestamps: false
-});
-sequelize.define('player', {
-    firstName: {
-        type: DataTypes.STRING
-    },
-    lastName: {
-        type: DataTypes.STRING
-    },
-    username: {
-        type: DataTypes.STRING,
-        allowNull:false,
-        unique:true
-    },
-    season: {
-        type: DataTypes.ENUM ('summer, winter, spring, fall'),
-    },
-    birthday: {
-        type: DataTypes.DATEONLY,
-        defaultValue:DataTypes.NOW
-    }
-});
-let {users,player}=sequelize.models;
+// nueva instancia de sequelize // importante //
+const sequelize = new Sequelize('postgres://postgres:0170@localhost:5433/dbEcommerce', {logging:false})
+//const sequelize = new Sequelize('postgres://postgres:0170@localhost:5433/prueba')
 
 console.log(users)
-console.log(player)
+console.log(sellers)
+console.log(products)
 
 
 module.exports = {

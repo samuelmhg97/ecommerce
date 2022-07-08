@@ -1,5 +1,5 @@
 const express = require('express');
-const {db,players,user}=require('./db');
+const {db,users,products, orders, sellers}=require('./db');
 
 
 let server = express();
@@ -18,5 +18,5 @@ server.post('/users',async(req,res)=>{
 })
 server.listen(3000, ()=>{
     console.log('escuchando puerto 3000');
-    db.sync()
+    db.sync({force:true});
 });
