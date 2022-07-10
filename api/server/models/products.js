@@ -1,15 +1,15 @@
 const {DataTypes} = require('sequelize');
 
 
-module.exports = sequilize => {
+module.exports = sequelize => {
     sequelize.define('Product', {
-        productName : {type: DataTypes.STRING},
-        productDescription : {type: DataTypes.STRING},
-        productSize : {type: DataTypes.STRING},
-        productWeight : {type: DataTypes.STRING},
-        productStock : {type: DataTypes.INTEGER},
-        productPrice : {type: DataTypes.INTEGER},
-        productSeller : {type: DataTypes.INTEGER}, //  [ref: > sellers.Id]
-        productCategory : {type: DataTypes.INTEGER},
-        productState : {type: DataTypes.INTEGER}
+        mame : {type: DataTypes.STRING},
+        description : {type: DataTypes.STRING},
+        size : {type: DataTypes.STRING},
+        weight : {type: DataTypes.STRING},
+        stock : {type: DataTypes.INTEGER},
+        price : {type: DataTypes.INTEGER},
+        seller : {type: DataTypes.INTEGER}, //  [ref: > users.Id]
+        category : {type: DataTypes.INTEGER}, // hacer tabla
+        state : {type: DataTypes.INTEGER} // ref: > states.Id
     })};

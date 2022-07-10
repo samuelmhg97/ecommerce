@@ -1,6 +1,6 @@
 const {DataTypes} = require('sequelize');
 
-module.exports = sequilize => {
+module.exports = sequelize => {
     sequelize.define('Delivery', {
-        deliveryType : {type: DataTypes.STRING},
+       type : {type: DataTypes.STRING},
 })};

@@ -1,8 +1,8 @@
 const {DataTypes} = require('sequelize');
 
-module.exports = sequilize => {
+module.exports = sequelize => {
     sequelize.define('Image', {
-        imageProductId  : {type: DataTypes.INTEGER},//  [ref: > products.productId]
+        producrtId  : {type: DataTypes.INTEGER},//  [ref: > products.productId]
         image : {type: DataTypes.STRING}, // ruta de la imagen
-        imageOrder : {type: DataTypes.INTEGER}, // orden de muestra
+        order : {type: DataTypes.INTEGER}, // orden de muestra
 })};

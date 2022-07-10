@@ -1,10 +1,10 @@
 const {DataTypes} = require('sequelize');
 
-module.exports = sequilize => {
+module.exports = sequelize => {
     sequelize.define('Order', {
-        orderDate : {type: DataTypes.DATE},
-        orderUser : {type: DataTypes.INTEGER},//  [ref: > users.userId]
-        orderState : {type: DataTypes.INTEGER}, // [ref: > states.stateId]
-        orderPayment : {type: DataTypes.INTEGER}, // [ref: > payment.paymentId]
-        orderDelivery : {type: DataTypes.INTEGER}, //[ref: > delivery.deliveryId]
+        date : {type: DataTypes.DATEONLY, alowNull: false, defaultValue: DataTypes.NOW},
+        buyer : {type: DataTypes.INTEGER, alowNull: false},//  [ref: > users.userId]
+        state : {type: DataTypes.INTEGER, alowNull: false, defaultValue:1}, // [ref: > states.stateId]
+        payment : {type: DataTypes.INTEGER, alowNull: true}, // [ref: > payment.paymentId]
+        delivery : {type: DataTypes.INTEGER, alowNull: true}, //[ref: > delivery.deliveryId]
 })};

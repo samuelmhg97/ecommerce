@@ -1,8 +1,8 @@
 const {DataTypes} = require('sequelize');
 
-module.exports = sequilize => {
+module.exports = sequelize => {
     sequelize.define('Item', {
-        itemOrder : {type: DataTypes.INTEGER}, //  [ref: > orders.orderId]
-        itemProduct : {type: DataTypes.INTEGER}, //  [ref: > products.productId]
-        itemQuantity : {type: DataTypes.INTEGER},
+        order : {type: DataTypes.INTEGER}, //  [ref: > orders.orderId]
+        product : {type: DataTypes.INTEGER}, //  [ref: > products.productId]
+        quantity : {type: DataTypes.INTEGER},
     })}

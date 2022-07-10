@@ -1,7 +1,7 @@
 const {DataTypes} = require('sequelize');
 
-module.exports = sequilize => {
-    sequelize.define('zipCode', {
-        zipCodeId : {type: DataTypes.INTEGER}, // [pk]
-        zipCodeLocation : {type: DataTypes.STRING},
+module.exports = sequelize => {
+    sequelize.define('ZipCode', {
+        id : {type: DataTypes.INTEGER, primaryKey:true}, // [pk]
+        location : {type: DataTypes.STRING},
     })};

@@ -1,18 +1,20 @@
 const {DataTypes} = require('sequelize');
 
-module.exports = sequilize => {
+module.exports = sequelize => {
     sequelize.define('User', {
-    userNickName: {type: DataTypes.STRING, alowNull: false, unique: true},
-    userName: {type: DataTypes.STRING},
-    userSurname: {type: DataTypes.STRING},
-    userPhoneNumb: {type: DataTypes.INTEGER},
-    userEmail: {type: DataTypes.STRING},
-    userAdressStreet: {type: DataTypes.STRING},
-    userAdressNumber: {type: DataTypes.INTEGER},
-    userAdressApartment: {type: DataTypes.STRING},
-    userAdressCity: {type: DataTypes.STRING},
-    userAdressZipCode: {type: DataTypes.INTEGER}, //  [ref: > zipCodes.Id]
-    userAdressCountry: {type: DataTypes.INTEGER}, //  [ref: > countries.Id]
-    userTaxCond: {type: DataTypes.INTEGER}, // [ref: > taxCond.Id]
-    userState:{type: DataTypes.INTEGER} // [ref: > states.Id]
+    nickName: {type: DataTypes.STRING, alowNull: false, unique: true},
+    name: {type: DataTypes.STRING, alowNull: false},
+    surname: {type: DataTypes.STRING, alowNull: false},
+    phoneNumb: {type: DataTypes.INTEGER, alowNull: true},
+    email: {type: DataTypes.STRING, alowNull: false},
+    adressStreet: {type: DataTypes.STRING, alowNull: true},
+    adressNumber: {type: DataTypes.INTEGER, alowNull: true},
+    adressApartment: {type: DataTypes.STRING, alowNull: true},
+    adressCity: {type: DataTypes.STRING, alowNull: true},
+    adressZipCode: {type: DataTypes.INTEGER, alowNull: true}, //  [ref: > zipCodes.Id]
+    adressCountry: {type: DataTypes.INTEGER, alowNull: true}, //  [ref: > countries.Id]
+    taxCond: {type: DataTypes.INTEGER, alowNull: true}, // [ref: > taxCond.Id]
+    state:{type: DataTypes.INTEGER, alowNull: false, defaultValue:1}, // [ref: > states.Id]
+    buyer: {type: DataTypes.BOOLEAN, alowNull: false, defaultValue:true},
+    seller: {type: DataTypes.BOOLEAN, alowNull: false, defaultValue:false},
 })};
